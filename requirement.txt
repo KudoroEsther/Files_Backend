@@ -3,3 +3,9 @@ matplotlib
 pandas
 numpy
 scikit_learn
+pydantic
+uvicorn
+dotenv
+fastapi
+SQLAlchemy
+pymysql
