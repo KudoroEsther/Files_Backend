@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from dotenv import load_dotenv
+from pydantic import BaseModel
 import os
 import uvicorn #this handles all url in the browser
 import json
@@ -25,14 +26,14 @@ def get_file():
     return "this is your file"
 
 #POST REQUEST
-class FilePost():
+class FilePost(BaseModel):
     name: str 
     track: str
 
 @app.post("/send_file")
 def send_file(input: FilePost):
     data.append(input.model_dump())
-    return "File saved successfully."
+    return {"message":"File saved successfully."}
 
 
 
