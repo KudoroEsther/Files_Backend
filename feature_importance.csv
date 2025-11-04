@@ -1,0 +1,8 @@
+feature,correlation
+Credit_History,0.5100925874040919
+Loan_Income_Ratio,0.06596738275730209
+Monthly_Payment,0.06099948174912871
+CoapplicantIncome_log,0.04803636713777769
+LoanAmount_log,0.025255668579692515
+ApplicantIncome_log,0.016538031731098145
+Total_Income,0.014284434443758065
