@@ -7,7 +7,7 @@ data = [{
     "track": "Developers"
 }]
 
-class BasciApi(BaseHTTPRequestHandler):
+class BasicAPI(BaseHTTPRequestHandler):
     #get endpoint: data is being sent from the server to the client
     def send_data(self, data, status=200): #status=200 means things are working perfectly
         
@@ -17,4 +17,16 @@ class BasciApi(BaseHTTPRequestHandler):
         self.send_header('content-type', 'application/json') #header is the data that accompanies the data being sent through an endpoint. It gives the endpoint an idea of the type of data being sent. The types include texts, media, files
         self.end_headers()#ends the header
         #the main file
-        self.wfile.write(json.dumps(data).encode())
+        self.wfile.write(json.dumps(data).encode()) #this dumps the data and encodes it into byte format to being sent through the endpoint
+
+        #Defining the get function
+    def do_GET(self):
+        self.send_data(data)
+
+#Running the defined class
+def run():
+    #HTTPServer((host,port), Class)
+    HTTPServer(('localhost', 8000), BasicAPI).serve_forever()
+
+print('Application is running...')
+run()
