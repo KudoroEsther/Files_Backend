@@ -1,0 +1,5 @@
+fastapi
+dotenv
+pydantic
+uvicorn
+json
